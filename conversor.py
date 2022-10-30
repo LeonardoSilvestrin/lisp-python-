@@ -13,11 +13,11 @@ def fact(n):
     else:
         return n*fact(n-1)
 
-with open('sel0456\lista(lisp)\input.data') as data:
+with open('lisp-python-\input.data') as data:
     linhas = data.readlines()
-with open('sel0456\lista(lisp)\output.data', 'w') as output:
+with open('lisp-python-\output.data', 'w') as output:
     linhas_novas = linhas
     for i in range(0,len(linhas)):
-        linhas_novas[i] = str(fibo(int(linhas[i][0]))) + ' ' + str(fact(int(linhas[i][2]))) +'\n'
+        linhas_novas[i] = 'linha {}:'.format(i) + ' fib({}) = '.format(linhas[i][0]) + str(fibo(int(linhas[i][0]))) + ' fact({}) = '.format(linhas[i][2]) + str(fact(int(linhas[i][2]))) +'\n'
     linhas_novas2 = ''.join(linhas_novas)
     output.write(linhas_novas2)
